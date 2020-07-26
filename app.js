@@ -71,20 +71,37 @@ function deleteNote(index) {
     showNotes();
 }
 
-function editNote(element,index) {
+function editNote(index) {
     let updateCard = document.getElementById('updateCard')
     // console.log(upateCard)
     updateCard.classList.add('open')
     updateCard.classList.remove('close')
-    
-
+    let textArea = document.getElementById('updateText');
+    // console.log(textArea)
+    let cardText = localStorage.getItem("notes");
+    cardText = JSON.parse(cardText)
+    // console.log(cardText[index])
+    textArea.innerText =  cardText[index]
+    // var index =   cardText[index]
+    // return index
 }
 
 
 function updateNote(){
     let update = document.getElementById('updateCard')
+    let textArea = document.getElementById('updateText');
+    let cardText = localStorage.getItem("notes");
+    cardText = JSON.parse(cardText)
+
+    // // console.log(editNote())
+    // let updated  = splice(cardText[index], textArea.innerText);
+    
+     
+
+
     update.classList.add('close')
     update.classList.remove('open')
+    
 }
 
 
